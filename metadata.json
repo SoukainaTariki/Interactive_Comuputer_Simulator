@@ -1,0 +1,6 @@
+{
+  "name": "Simulation du Fonctionnement d'un Ordinateur",
+  "description": "Une simulation interactive et pédagogique pour comprendre comment les données circulent et sont traitées dans un ordinateur.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
