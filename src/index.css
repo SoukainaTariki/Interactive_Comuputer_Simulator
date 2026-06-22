@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+html, body, #root {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@theme {
+  --font-sans: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Enable class-based dark mode selector in Tailwind CSS v4 */
+@variant dark (&:where(.dark, .dark *));
+
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+/* Dark Mode Overrides and Semantic Adapters for Lycée Module */
+.dark,
+.dark .bg-slate-950,
+.dark .bg-slate-950\/80,
+.dark .bg-slate-950\/90,
+.dark .bg-slate-950\/95,
+.dark-mode-transition.dark,
+.dark .bg-blue-50\/20 {
+  background-color: #0b1120 !important; /* Premium rich deep homogeneous blue-gray canvas */
+  color: #f1f5f9 !important;
+}
+
+/* Transition global background and layout attributes smoothly */
+.dark-mode-transition {
+  transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              color 0.1s ease;
+}
+
+/* Background overrides for cards and blocks to make them completely homogeneous */
+.dark .bg-white,
+.dark .bg-slate-900,
+.dark .bg-slate-900\/60,
+.dark .bg-slate-900\/90,
+.dark .bg-slate-900\/95,
+.dark .bg-slate-50,
+.dark .bg-slate-100,
+.dark .bg-slate-100\/80 {
+  background-color: #17223b !important; /* Premium unified cards color */
+  border-color: #1e2e4a !important;
+  color: #f8fafc !important;
+}
+
+/* Correct titles colors in dark mode */
+.dark .text-gray-950,
+.dark .text-gray-900,
+.dark .text-slate-900,
+.dark .text-slate-950 {
+  color: #f8fafc !important;
+}
+
+/* Secondary body & instruction text colors */
+.dark .text-gray-600,
+.dark .text-slate-600,
+.dark .text-gray-700,
+.dark .text-slate-700 {
+  color: #cbd5e1 !important; /* soft Slate-300 */
+}
+
+.dark .text-gray-500,
+.dark .text-slate-500,
+.dark .text-slate-400 {
+  color: #94a3b8 !important; /* Slate-400 */
+}
+
+/* Borders adaptability to maintain homogeneous contrast */
+.dark .border-blue-100,
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-slate-300,
+.dark .border-slate-700,
+.dark .border-slate-800,
+.dark .border-slate-900,
+.dark .border-gray-100,
+.dark .border-gray-200,
+.dark .border-gray-300 {
+  border-color: #1e2e4a !important; /* Unified Slate-800 borders */
+}
+
+.dark .bg-blue-50\/80 {
+  background-color: #17223b !important;
+  color: #93c5fd !important;
+}
+
+.dark .bg-blue-50 {
+  background-color: #1e2c4a !important;
+  border-color: #24355a !important;
+  color: #93c5fd !important;
+}
+
+.dark .text-blue-900, .dark .text-blue-800 {
+  color: #93c5fd !important;
+}
+
+.dark .bg-emerald-50\/60,
+.dark .bg-emerald-50,
+.dark .bg-emerald-100 {
+  background-color: #064e3b !important;
+  border-color: #065f46 !important;
+  color: #34d399 !important;
+}
+
+.dark .text-emerald-950,
+.dark .text-emerald-800 {
+  color: #a7f3d0 !important;
+}
+
+.dark .bg-amber-50\/60,
+.dark .bg-amber-50,
+.dark .bg-amber-50\/70,
+.dark .bg-amber-50\/80,
+.dark .bg-amber-100 {
+  background-color: #78350f !important;
+  border-color: #92400e !important;
+  color: #fbe38a !important;
+}
+
+.dark .text-amber-950,
+.dark .text-amber-805,
+.dark .text-amber-800,
+.dark .text-amber-900 {
+  color: #fde68a !important;
+}
+
+.dark .bg-rose-50\/30,
+.dark .bg-rose-50\/50,
+.dark .bg-rose-50,
+.dark .bg-rose-100 {
+  background-color: #881337 !important;
+  border-color: #9f1239 !important;
+  color: #fecaca !important;
+}
+
+.dark .text-rose-900,
+.dark .text-rose-800 {
+  color: #fda4af !important;
+}
+
+.dark .bg-fuchsia-50\/50,
+.dark .bg-fuchsia-100 {
+  background-color: #701a75 !important;
+  border-color: #86198f !important;
+  color: #fbcfe8 !important;
+}
+
+.dark .bg-cyan-50\/50,
+.dark .bg-cyan-100 {
+  background-color: #164e63 !important;
+  border-color: #155e75 !important;
+  color: #cffafe !important;
+}
+
+.dark .text-cyan-900,
+.dark .text-cyan-800 {
+  color: #22d3ee !important;
+}
+
+.dark .bg-indigo-50\/60,
+.dark .bg-indigo-50,
+.dark .bg-indigo-100 {
+  background-color: #311042 !important;
+  border-color: #4c1d95 !important;
+  color: #e9d5ff !important;
+}
+
+.dark .text-indigo-900, .dark .text-indigo-800, .dark .text-indigo-700 {
+  color: #c084fc !important;
+}
+
+/* Yellow / Bus visual highlights */
+.dark .bg-yellow-50,
+.dark .bg-yellow-100 {
+  background-color: #422006 !important;
+  border-color: #713f12 !important;
+  color: #fef08a !important;
+}
+
+.dark .text-yellow-850,
+.dark .text-yellow-800,
+.dark .text-yellow-700 {
+  color: #fef08a !important;
+}
+
+/* Orange highlights */
+.dark .bg-orange-50,
+.dark .bg-orange-100 {
+  background-color: #431407 !important;
+  border-color: #7c2d12 !important;
+  color: #ffedd5 !important;
+}
+
+/* Purple / Control Unit highlights */
+.dark .bg-purple-50,
+.dark .bg-purple-100 {
+  background-color: #3b0764 !important;
+  border-color: #581c87 !important;
+  color: #f3e8ff !important;
+}
+
+.dark .text-purple-700,
+.dark .text-purple-800 {
+  color: #d8b4fe !important;
+}
+
+/* Pink / ALU highlights */
+.dark .bg-pink-50,
+.dark .bg-pink-100 {
+  background-color: #500724 !important;
+  border-color: #831843 !important;
+  color: #fce7f3 !important;
+}
+
+.dark .text-pink-700,
+.dark .text-pink-800 {
+  color: #fbcfe8 !important;
+}
+
+/* Hover adaptabilities in list buttons and selectors */
+.dark .hover\:bg-blue-100:hover,
+.dark .hover\:bg-slate-100:hover, 
+.dark .hover\:bg-slate-100\/50:hover,
+.dark .hover\:bg-slate-50:hover {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+}
+
+/* Motherboard functional diagrams overrides */
+.dark #motherboard-diagram-wrapper {
+  background-color: #101524 !important;
+  border-color: #1e293b !important;
+}
+
+/* Footer layout dark adjustments */
+.dark footer {
+  background-color: #080c14 !important;
+}
+
+.dark footer p, .dark footer span {
+  color: #94a3b8 !important;
+}
+
+/* Navigation button adaptations */
+.dark .bg-blue-50\/80 {
+  background-color: #151d30 !important;
+  color: #e2e8f0 !important;
+  border-color: #1e293b !important;
+}
+.dark .bg-blue-50\/80:hover {
+  background-color: #1e293b !important;
+}
+
+
+/* 🎓 HIGH PRIORITY EDUCATIONAL PROJECTION MODE CLASSROOM STYLES 🎓 */
+.projection-mode, .projection-layout {
+  /* Scale default typography to guarantee readability from 5-10 meters away on low-quality projectors */
+  font-size: 18px !important;
+}
+
+.projection-mode h1, .projection-layout h1 {
+  font-size: 2.85rem !important; /* 45px+ */
+  font-weight: 900 !important;
+  letter-spacing: -0.025em !important;
+}
+
+.projection-mode h2, .projection-layout h2 {
+  font-size: 2.15rem !important; /* 34px+ */
+  font-weight: 900 !important;
+}
+
+.projection-mode h3, .projection-layout h3 {
+  font-size: 1.65rem !important; /* 26px+ */
+  font-weight: 900 !important;
+}
+
+.projection-mode p, .projection-layout p,
+.projection-mode span, .projection-layout span,
+.projection-mode li, .projection-layout li,
+.projection-mode button, .projection-layout button,
+.projection-mode select, .projection-layout select,
+.projection-mode input, .projection-layout input {
+  font-size: 1.15rem !important; /* ~18.5px+ */
+  font-weight: 600 !important; /* Thick lines for high legibility */
+}
+
+/* Ensure ultra-high contrast text color in both dark/light modes */
+.projection-mode .text-slate-400,
+.projection-mode .text-slate-500,
+.projection-mode .text-gray-500,
+.projection-mode .text-slate-600,
+.projection-mode .text-gray-600 {
+  color: #1e293b !important; /* Clear dark charcoal in light mode */
+}
+
+.dark.projection-mode .text-slate-400,
+.dark.projection-mode .text-slate-500,
+.dark.projection-mode .text-gray-500,
+.dark.projection-mode .text-slate-600,
+.dark.projection-mode .text-gray-600 {
+  color: #f8fafc !important; /* High contrast white in dark mode */
+}
+
+/* Enforce border visual density: minimum 2.5px thickness on projected boards */
+.projection-mode .border,
+.projection-mode .border-2,
+.projection-layout .border,
+.projection-layout .border-2 {
+  border-width: 2.5px !important;
+}
+
+.projection-mode .border-slate-100,
+.projection-mode .border-slate-200,
+.projection-mode .border-slate-300 {
+  border-color: #0f172a !important; /* High visual boundaries */
+}
+
+.dark.projection-mode .border-slate-150,
+.dark.projection-mode .border-slate-200,
+.dark.projection-mode .border-slate-300 {
+  border-color: #cbd5e1 !important; /* High visual boundaries */
+}
+
+/* Enlarged animations, particles, and packet tracking */
+.projection-mode .animate-pulse-slow {
+  animation-duration: 2.5s !important; /* slower, easy-to-follow flow rate */
+}
+
+/* Spacing and margins enhancements for whiteboard projectors */
+.projection-mode .p-3, .projection-layout .p-3 {
+  padding: 1rem !important;
+}
+.projection-mode .p-4, .projection-layout .p-4 {
+  padding: 1.35rem !important;
+}
+.projection-mode .p-6, .projection-layout .p-6 {
+  padding: 2.25rem !important;
+}
+.projection-mode .p-8, .projection-layout .p-8 {
+  padding: 3rem !important;
+}
+
