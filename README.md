@@ -105,6 +105,9 @@ Pour exécuter le projet sur votre machine locale :
    ```bash
    npm run build
    ```
-
+---
+##**crédits**
+**Auteur**: Soukaina TARIKI
+**Co-Auteur**: Broumi said Broumisaid78@gmail.com Regional Center for the Professions of Education and Training (CRMEF), Casablanca- Settat, Morocco.
 ---
 *Conçu et développé par **SOUKAINA TARIKI** (Enseignante d'informatique – Lycée Qualifiant — Ministère de l'Éducation Nationale, du Préscolaire et des Sports).*
